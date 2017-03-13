@@ -15,3 +15,8 @@ Principles when coding:
 - Predictable resource usage: no explosion of process, open files, threads or memory allocs. (pools everywhere :-P);
 - `Minimize weak dependencies` in the core like web-api's, rpc calls, socket connections, filesystem, etc.
 - Some `weak dependependencies` are unavoidable, make them obvious to track, unlockable and asynchronous;
+
+Working around the real-world:
+- Separated tooling for database migration and maintence, but it will be embedded in full version;
+- We **will** provide replication at some point, and our code design must counting on it;
+- There's **no plan to provide scalling**: since galeflow aims to be thin and fast, scalling should not be necessary; Still, our code design must make a transition viable;
